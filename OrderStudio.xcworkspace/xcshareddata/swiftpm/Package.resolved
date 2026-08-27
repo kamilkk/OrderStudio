@@ -1,0 +1,15 @@
+{
+  "originHash" : "62068ad2fba731d47cc5cafa0c30e9b73483a2f45dfff2a0caf44d03d644b631",
+  "pins" : [
+    {
+      "identity" : "moderndesignsystem",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kamilkk/ModernDesignSystem",
+      "state" : {
+        "revision" : "20761d65f9d2ab91041b17242d73fd12bb7a2e45",
+        "version" : "1.2.0"
+      }
+    }
+  ],
+  "version" : 3
+}
