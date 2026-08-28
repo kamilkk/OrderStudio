@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+  <rect width="400" height="300" fill="#EAF5F5"></rect>
+  <g transform="translate(200 120) scale(1.9)" fill="none" stroke="#0E7C86" stroke-width="1.4" stroke-linejoin="round">
+    <path d="M26 0 13 22.5 -13 22.5 -26 0 -13 -22.5 13 -22.5Z"></path>
+    <path d="M10.4 6 0 12 -10.4 6 -10.4 -6 0 -12 10.4 -6Z" fill="#CFEFF0" stroke="#0E7C86"></path>
+    <path d="M26 0 10.4 6M13 22.5 0 12M-13 22.5 -10.4 6M-26 0 -10.4 -6M-13 -22.5 0 -12M13 -22.5 10.4 6"></path>
+  </g>
+  <text x="200" y="228" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="30" letter-spacing="2"><tspan fill="#06282B" font-weight="700">lumen</tspan><tspan fill="#0E7C86" font-weight="300"> studio</tspan></text>
+  <text x="200" y="250" text-anchor="middle" fill="#0E7C86" font-family="Helvetica,Arial,sans-serif" font-weight="700" font-size="9" letter-spacing="6">CONTEMPORARY BASICS</text>
+</svg>

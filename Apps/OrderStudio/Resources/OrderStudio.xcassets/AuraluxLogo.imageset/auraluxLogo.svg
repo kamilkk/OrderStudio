@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="96" viewBox="0 0 400 96">
+  <g transform="translate(6,16)"><path d="M32 6 58 32 32 58 6 32Z" fill="none" stroke="#8E5CC4" stroke-width="2.2"></path><path d="M32 6 44 32 32 58 20 32Z" fill="none" stroke="#C9A24B" stroke-width="1.6"></path><path d="M6 32h52" stroke="#8E5CC4" stroke-width="1.2" stroke-opacity=".5"></path></g>
+  <text x="92" y="50" font-family="Didot,'Bodoni 72',Georgia,serif" font-size="32" letter-spacing="9" fill="#2E1A44">AURALUX</text>
+  <text x="94" y="72" font-family="Helvetica,Arial,sans-serif" font-weight="700" font-size="10" letter-spacing="6" fill="#C9A24B">PREMIUM FASHION</text>
+</svg>
