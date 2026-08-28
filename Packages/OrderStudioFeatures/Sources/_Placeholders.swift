@@ -13,16 +13,6 @@ import SwiftUI
 // Only BrandsGridView is `public` (the app uses it); the rest are used
 // inside OrderStudioFeatures, so `internal` is enough.
 
-public struct BrandsGridView: View { // → Phase 7
-    public init() {}
-    public var body: some View { Text("BrandsGridView — Phase 7") }
-}
-
-struct HomeView: View { // → Phase 6
-    let brand: StoreBrand
-    var body: some View { Text("HomeView — Phase 6") }
-}
-
 struct CustomersView: View { // → Phase 9
     var body: some View { Text("CustomersView — Phase 9") }
 }
