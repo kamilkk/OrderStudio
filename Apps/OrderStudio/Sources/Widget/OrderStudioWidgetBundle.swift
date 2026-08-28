@@ -1,3 +1,10 @@
+//
+//  OrderStudioWidgetBundle.swift
+//  OrderStudioWidget
+//
+//  Created by Kamil Kowalski on 28/08/2026.
+//
+
 import SwiftUI
 import WidgetKit
 
