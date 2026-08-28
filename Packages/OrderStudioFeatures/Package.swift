@@ -9,9 +9,13 @@ let package = Package(
     dependencies: [
         .package(path: "../OrderStudioCore"),
         .package(path: "../OrderStudioUI"),
+        .package(url: "https://github.com/kamilkk/ModernDesignSystem", from: "1.2.0"),
     ],
     targets: [
-        .target(name: "OrderStudioFeatures", dependencies: ["OrderStudioCore", "OrderStudioUI"], path: "Sources"),
+        .target(name: "OrderStudioFeatures",
+                dependencies: ["OrderStudioCore", "OrderStudioUI",
+                               .product(name: "ModernDesignSystem", package: "ModernDesignSystem")],
+                path: "Sources"),
         .testTarget(name: "OrderStudioFeaturesTests", dependencies: ["OrderStudioFeatures"], path: "Tests"),
     ]
 )
