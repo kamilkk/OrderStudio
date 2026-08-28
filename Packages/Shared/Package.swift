@@ -7,7 +7,7 @@ let package = Package(
     platforms: [.iOS(.v18), .macOS(.v15)],
     products: [.library(name: "Shared", targets: ["Shared"])],
     targets: [
-        .target(name: "Shared", path: "Sources/Shared"),
-        .testTarget(name: "SharedTests", dependencies: ["Shared"], path: "Tests/SharedTests"),
+        .target(name: "Shared", path: "Sources"),
+        .testTarget(name: "SharedTests", dependencies: ["Shared"], path: "Tests"),
     ]
 )

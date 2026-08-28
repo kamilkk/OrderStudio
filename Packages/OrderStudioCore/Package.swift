@@ -8,7 +8,7 @@ let package = Package(
     products: [.library(name: "OrderStudioCore", targets: ["OrderStudioCore"])],
     dependencies: [.package(path: "../Shared")],
     targets: [
-        .target(name: "OrderStudioCore", dependencies: ["Shared"], path: "Sources/OrderStudioCore"),
-        .testTarget(name: "OrderStudioCoreTests", dependencies: ["OrderStudioCore"], path: "Tests/OrderStudioCoreTests"),
+        .target(name: "OrderStudioCore", dependencies: ["Shared"], path: "Sources"),
+        .testTarget(name: "OrderStudioCoreTests", dependencies: ["OrderStudioCore"], path: "Tests"),
     ]
 )

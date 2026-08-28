@@ -11,7 +11,7 @@ let package = Package(
         .package(path: "../OrderStudioUI"),
     ],
     targets: [
-        .target(name: "OrderStudioFeatures", dependencies: ["OrderStudioCore", "OrderStudioUI"], path: "Sources/OrderStudioFeatures"),
-        .testTarget(name: "OrderStudioFeaturesTests", dependencies: ["OrderStudioFeatures"], path: "Tests/OrderStudioFeaturesTests"),
+        .target(name: "OrderStudioFeatures", dependencies: ["OrderStudioCore", "OrderStudioUI"], path: "Sources"),
+        .testTarget(name: "OrderStudioFeaturesTests", dependencies: ["OrderStudioFeatures"], path: "Tests"),
     ]
 )

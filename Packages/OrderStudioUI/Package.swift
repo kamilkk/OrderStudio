@@ -17,8 +17,8 @@ let package = Package(
                 "OrderStudioCore",
                 .product(name: "ModernDesignSystem", package: "ModernDesignSystem"),
             ],
-            path: "Sources/OrderStudioUI"
+            path: "Sources"
         ),
-        .testTarget(name: "OrderStudioUITests", dependencies: ["OrderStudioUI"], path: "Tests/OrderStudioUITests"),
+        .testTarget(name: "OrderStudioUITests", dependencies: ["OrderStudioUI"], path: "Tests"),
     ]
 )
