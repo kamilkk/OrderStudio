@@ -16,8 +16,11 @@ public struct BrandsGridView: View {
     @State private var selected: StoreBrand?
     @State private var searchText = ""
     @State private var isRefreshing = false
+    @State private var showSettings = false
 
     private let columns = [GridItem(.adaptive(minimum: 220), spacing: 24)]
+
+    public init() {}
 
     public var body: some View {
         NavigationStack {
@@ -32,12 +35,14 @@ public struct BrandsGridView: View {
                                     selected = brand
                                 } label: {
                                     brand.logoImage
-                                        .resizable().scaledToFit().padding(24)
-                                        .frame(maxWidth: .infinity)
-                                        .aspectRatio(1, contentMode: .fit)
-                                        .saturation(brand.isSynchronized ? 1 : 0)
-                                        .opacity(brand.isSynchronized ? 1 : 0.3)
+                                        .resizable().scaledToFit()
+                                        .padding(28)
+                                        .frame(maxWidth: .infinity, minHeight: 150)
                                         .background(.background, in: .rect(cornerRadius: 16))
+                                        .overlay { RoundedRectangle(cornerRadius: 16).stroke(.quaternary, lineWidth: 1) }
+                                        .shadow(color: .black.opacity(0.08), radius: 8, y: 4)
+                                        .saturation(brand.isSynchronized ? 1 : 0)
+                                        .opacity(brand.isSynchronized ? 1 : 0.35)
                                         .accessibilityLabel(brand.name)
                                 }
                                 .buttonStyle(.plain) // a11y: real Button
@@ -55,6 +60,14 @@ public struct BrandsGridView: View {
                 guard brands.isEmpty else { return } // seed once (fix)
                 brands = StoreBrand.all
             }
+            .background(Color(.systemGroupedBackground).ignoresSafeArea())
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button { showSettings = true } label: { Image(systemName: "gearshape") }
+                        .accessibilityLabel("Settings")
+                }
+            }
+            .sheet(isPresented: $showSettings) { SettingsView() }
         }
         // THE FIX: full-screen, not a sheet.
         .fullScreenCover(item: $selected) { brand in

@@ -8,7 +8,7 @@
 import SwiftUI
 import WidgetKit
 
-// Placeholder widget — real widget + Live Activity added in Phase 14.
+// Placeholder widget — real home-screen widget added in Phase 13.
 struct PlaceholderEntry: TimelineEntry { let date: Date }
 
 struct PlaceholderProvider: TimelineProvider {
@@ -29,7 +29,7 @@ struct OrderStudioWidget: Widget {
                 .containerBackground(.fill.tertiary, for: .widget)
         }
         .configurationDisplayName("Order Studio")
-        .description("Placeholder — real widget added in Phase 14.")
+        .description("Placeholder — real widget added in Phase 13.")
         .supportedFamilies([.systemSmall, .systemMedium])
     }
 }

@@ -34,11 +34,6 @@ struct SettingsView: View { // → Phase 13
     var body: some View { Text("SettingsView — Phase 13") }
 }
 
-struct CollectionRefreshView: View { // → Phase 12
-    @Binding var isPresenting: Bool
-    var body: some View { Text("CollectionRefreshView — Phase 12") }
-}
-
 struct FloatingBasketView: View { // → Phase 11
     @Binding var position: CGPoint
     var body: some View { Text("Basket") }
