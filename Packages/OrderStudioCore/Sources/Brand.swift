@@ -12,13 +12,11 @@ public struct StoreBrand: Identifiable, Hashable, Sendable {
     public let name: String // display name, e.g. "Meridian & Co."
     public let asset: String // asset-name prefix, e.g. "Meridian"
     public let tint: Color // SwiftUI accent (brand colour is also baked into the SVGs)
-    public let isSynchronized: Bool
 
-    public init(name: String, asset: String, tint: Color, isSynchronized: Bool) {
+    public init(name: String, asset: String, tint: Color) {
         self.name = name
         self.asset = asset
         self.tint = tint
-        self.isSynchronized = isSynchronized
     }
 
     // Vector brand art from OrderStudio.xcassets (main bundle).
@@ -32,12 +30,12 @@ public struct StoreBrand: Identifiable, Hashable, Sendable {
 
 public extension StoreBrand {
     static let all: [StoreBrand] = [
-        .init(name: "Northpeak", asset: "Northpeak", tint: Color(hex: 0x2E7D5B), isSynchronized: true),
-        .init(name: "Auralux", asset: "Auralux", tint: Color(hex: 0x8E5CC4), isSynchronized: true),
-        .init(name: "Veloce", asset: "Veloce", tint: Color(hex: 0xE4572E), isSynchronized: false),
-        .init(name: "Meridian & Co.", asset: "Meridian", tint: Color(hex: 0x1F6FEB), isSynchronized: true),
-        .init(name: "Lumen Studio", asset: "Lumen", tint: Color(hex: 0x0E7C86), isSynchronized: false),
-        .init(name: "Bramblewood", asset: "Bramblewood", tint: Color(hex: 0x9C6B2E), isSynchronized: true),
+        .init(name: "Northpeak", asset: "Northpeak", tint: Color(hex: 0x2E7D5B)),
+        .init(name: "Auralux", asset: "Auralux", tint: Color(hex: 0x8E5CC4)),
+        .init(name: "Veloce", asset: "Veloce", tint: Color(hex: 0xE4572E)),
+        .init(name: "Meridian & Co.", asset: "Meridian", tint: Color(hex: 0x1F6FEB)),
+        .init(name: "Lumen Studio", asset: "Lumen", tint: Color(hex: 0x0E7C86)),
+        .init(name: "Bramblewood", asset: "Bramblewood", tint: Color(hex: 0x9C6B2E)),
     ]
 }
 

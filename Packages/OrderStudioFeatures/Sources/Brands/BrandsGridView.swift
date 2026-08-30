@@ -41,8 +41,6 @@ public struct BrandsGridView: View {
                                         .background(.background, in: .rect(cornerRadius: 16))
                                         .overlay { RoundedRectangle(cornerRadius: 16).stroke(.quaternary, lineWidth: 1) }
                                         .shadow(color: .black.opacity(0.08), radius: 8, y: 4)
-                                        .saturation(brand.isSynchronized ? 1 : 0)
-                                        .opacity(brand.isSynchronized ? 1 : 0.35)
                                         .accessibilityLabel(brand.name)
                                 }
                                 .buttonStyle(.plain) // a11y: real Button
