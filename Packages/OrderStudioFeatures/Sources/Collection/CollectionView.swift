@@ -35,7 +35,8 @@ struct CollectionView: View {
                             description: "WP \(product.wholesale) · RRP \(product.retail)",
                             price: "\(product.retail)",
                             localImage: Image(uiImage: UIImage(named: product.assetName(for: brand))
-                                ?? UIImage(systemName: product.symbol)!)
+                                ?? UIImage(systemName: product.symbol)
+                                ?? UIImage(systemName: "shippingbox")!)
                         ) { selectedProduct = product }
                             .onDrag { NSItemProvider(object: product.id.uuidString as NSString) }
                     }
