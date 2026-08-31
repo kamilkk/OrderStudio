@@ -5,7 +5,6 @@
 //  Created by Kamil Kowalski on 28/08/2026.
 //
 
-import OrderStudioCore
 import SwiftUI
 #if canImport(UIKit)
     import UIKit
