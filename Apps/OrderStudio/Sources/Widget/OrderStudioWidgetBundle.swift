@@ -2,34 +2,58 @@
 //  OrderStudioWidgetBundle.swift
 //  OrderStudioWidget
 //
-//  Created by Kamil Kowalski on 28/08/2026.
+//  Created by Kamil Kowalski on 31/08/2026.
 //
 
 import SwiftUI
 import WidgetKit
 
-// Placeholder widget — real home-screen widget added in Phase 13.
-struct PlaceholderEntry: TimelineEntry { let date: Date }
+struct OrderStudioEntry: TimelineEntry {
+    let date: Date
+    let openOrders: Int
+}
 
-struct PlaceholderProvider: TimelineProvider {
-    func placeholder(in _: Context) -> PlaceholderEntry { .init(date: .now) }
-    func getSnapshot(in _: Context, completion: @escaping (PlaceholderEntry) -> Void) {
-        completion(.init(date: .now))
+struct Provider: TimelineProvider {
+    func placeholder(in _: Context) -> OrderStudioEntry { .init(date: .now, openOrders: 3) }
+
+    func getSnapshot(in _: Context, completion: @escaping (OrderStudioEntry) -> Void) {
+        completion(.init(date: .now, openOrders: 3))
     }
 
-    func getTimeline(in _: Context, completion: @escaping (Timeline<PlaceholderEntry>) -> Void) {
-        completion(Timeline(entries: [.init(date: .now)], policy: .never))
+    func getTimeline(in _: Context, completion: @escaping (Timeline<OrderStudioEntry>) -> Void) {
+        completion(Timeline(entries: [.init(date: .now, openOrders: Int.random(in: 1 ... 5))], policy: .never))
+    }
+}
+
+struct OrderStudioWidgetEntryView: View {
+    @Environment(\.widgetFamily) private var family
+    let entry: OrderStudioEntry
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("Open Orders").font(.callout)
+            Text("\(entry.openOrders)")
+                .font(.system(size: family == .systemSmall ? 48 : 40, weight: .bold))
+                .foregroundStyle(.tint)
+            if family == .systemMedium {
+                Text("New data available")
+                    .font(.caption)
+                    .padding(.horizontal, 10).padding(.vertical, 2)
+                    .background(.red.opacity(0.2), in: .capsule)
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+        .containerBackground(.fill.tertiary, for: .widget)
     }
 }
 
 struct OrderStudioWidget: Widget {
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: "OrderStudioWidget", provider: PlaceholderProvider()) { _ in
-            Text("Order Studio")
-                .containerBackground(.fill.tertiary, for: .widget)
+        StaticConfiguration(kind: "OrderStudioWidget", provider: Provider()) { entry in
+            OrderStudioWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("Order Studio")
-        .description("Placeholder — real widget added in Phase 13.")
+        .description("Open orders at a glance.")
         .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
