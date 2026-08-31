@@ -1,0 +1,34 @@
+default_platform(:ios)
+
+FASTLANE_DIR   = File.dirname(__FILE__)
+PROJECT_ROOT   = File.expand_path("..", FASTLANE_DIR)
+APP_PROJECT    = File.join(PROJECT_ROOT, "Apps/OrderStudio")
+WORKSPACE_PATH = File.join(PROJECT_ROOT, "OrderStudio.xcworkspace")
+
+platform :ios do
+  desc "Regenerate the Xcode project from project.yml"
+  lane :generate_projects do
+    Dir.chdir(APP_PROJECT) { sh("xcodegen generate") }
+    UI.success("Generated #{APP_PROJECT}/OrderStudio.xcodeproj")
+  end
+
+  desc "Close Xcode, regenerate, open the workspace"
+  lane :dev_start do
+    sh("killall Xcode 2>/dev/null || true")
+    generate_projects
+    sh("open #{WORKSPACE_PATH}")
+  end
+
+  desc "Build the iOS app"
+  lane :build_all do
+    generate_projects
+    build_app(workspace: WORKSPACE_PATH, scheme: "OrderStudio",
+              skip_archive: true, destination: "generic/platform=iOS Simulator")
+  end
+
+  desc "Run package + app tests"
+  lane :test_all do
+    generate_projects
+    run_tests(workspace: WORKSPACE_PATH, scheme: "OrderStudio")
+  end
+end

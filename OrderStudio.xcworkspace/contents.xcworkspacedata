@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace version="1.0">
+  <Group location="container:" name="Apps">
+    <FileRef location="group:Apps/OrderStudio/OrderStudio.xcodeproj"></FileRef>
+  </Group>
+  <Group location="container:" name="Packages">
+    <FileRef location="group:Packages/Shared"></FileRef>
+    <FileRef location="group:Packages/OrderStudioCore"></FileRef>
+    <FileRef location="group:Packages/OrderStudioUI"></FileRef>
+    <FileRef location="group:Packages/OrderStudioFeatures"></FileRef>
+  </Group>
+</Workspace>

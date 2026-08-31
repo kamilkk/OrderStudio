@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="96" viewBox="0 0 420 96" fill="none">
+  <g transform="translate(6,16)"><g stroke="#6E4A1E" stroke-width="2.4" stroke-linecap="round"><path d="M12 16 52 50"></path><path d="M52 16 12 50"></path></g><circle cx="30" cy="34" r="18" fill="#9C6B2E"></circle><g stroke="#C9A468" stroke-width="1.6" fill="none"><path d="M16 30 Q30 24 44 32"></path><path d="M14 36 Q30 44 46 36"></path><path d="M22 20 Q34 34 26 48"></path><path d="M38 20 Q30 34 40 48"></path></g><path d="M48 40 q10 4 6 12 q-2 5-8 3" stroke="#9C6B2E" stroke-width="2.4" fill="none" stroke-linecap="round"></path></g>
+  <text x="90" y="46" font-family="Didot,'Bodoni 72',Georgia,serif" font-size="26" letter-spacing="2" fill="#3A2712">Bramblewood</text>
+  <text x="92" y="70" font-family="Helvetica,Arial,sans-serif" font-weight="700" font-size="10" letter-spacing="5" fill="#9C6B2E">HERITAGE KNITWEAR</text>
+</svg>
