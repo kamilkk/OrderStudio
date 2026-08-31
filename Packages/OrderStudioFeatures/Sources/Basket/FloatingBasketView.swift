@@ -31,6 +31,8 @@ struct FloatingBasketView: View {
         .padding(8)
         .background(.thinMaterial, in: .capsule)
         .shadow(radius: 6, y: 3)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("Basket: \(productCount) items, \(productCount * 223) EUR")
         .position(position)
         .gesture(DragGesture().onChanged { position = $0.location })
         .onReceive(publisher) { _ in productCount += 1 }
