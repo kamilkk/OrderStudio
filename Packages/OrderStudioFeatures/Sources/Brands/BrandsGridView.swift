@@ -52,7 +52,7 @@ public struct BrandsGridView: View {
                     .refreshable { await refresh() } // awaits directly (fix)
                 }
             }
-            .navigationTitle("My Brands (\(brands.count))")
+            .navigationTitle("Brands")
             .searchable(text: $searchText)
             .task {
                 guard brands.isEmpty else { return } // seed once (fix)
