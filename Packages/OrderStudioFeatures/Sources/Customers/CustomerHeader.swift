@@ -31,11 +31,9 @@ struct CustomerHeader: View {
     }
 }
 
-#if DEBUG
-    // Note: CustomerHeader reads `brand.tint` (Color("BrandVeloce")) internally, which
-    // resolves from Bundle.main — in an isolated package preview the app catalog may be
-    // unavailable, so the accent can fall back. Layout is still accurate.
-    #Preview {
-        CustomerHeader(customer: PreviewData.customer, brand: PreviewData.brand).padding()
-    }
-#endif
+// Note: CustomerHeader reads `brand.tint` (Color("BrandVeloce")) internally, which
+// resolves from Bundle.main — in an isolated package preview the app catalog may be
+// unavailable, so the accent can fall back. Layout is still accurate.
+#Preview {
+    CustomerHeader(customer: PreviewData.customer, brand: PreviewData.brand).padding()
+}

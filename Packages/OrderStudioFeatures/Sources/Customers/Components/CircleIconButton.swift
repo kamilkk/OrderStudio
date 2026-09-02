@@ -35,12 +35,10 @@ struct CircleIconButton: View {
     }
 }
 
-#if DEBUG
-    #Preview {
-        HStack(spacing: 16) {
-            CircleIconButton(icon: "IconShare", tint: PreviewData.tint) {}
-            CircleIconButton(icon: "IconAdd", filled: true, tint: PreviewData.tint) {}
-        }
-        .padding()
+#Preview {
+    HStack(spacing: 16) {
+        CircleIconButton(icon: "IconShare", tint: PreviewData.tint) {}
+        CircleIconButton(icon: "IconAdd", filled: true, tint: PreviewData.tint) {}
     }
-#endif
+    .padding()
+}

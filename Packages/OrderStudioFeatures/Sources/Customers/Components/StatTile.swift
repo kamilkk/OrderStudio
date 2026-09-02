@@ -39,13 +39,11 @@ struct StatTile: View {
     }
 }
 
-#if DEBUG
-    #Preview {
-        HStack {
-            StatTile(title: "Lifetime spend", value: "$48,240", caption: "↑ 12% YoY",
-                     captionTinted: true, highlighted: true, tint: PreviewData.tint)
-            StatTile(title: "Total orders", value: "64", caption: "5 open now", tint: PreviewData.tint)
-        }
-        .padding()
+#Preview {
+    HStack {
+        StatTile(title: "Lifetime spend", value: "$48,240", caption: "↑ 12% YoY",
+                 captionTinted: true, highlighted: true, tint: PreviewData.tint)
+        StatTile(title: "Total orders", value: "64", caption: "5 open now", tint: PreviewData.tint)
     }
-#endif
+    .padding()
+}

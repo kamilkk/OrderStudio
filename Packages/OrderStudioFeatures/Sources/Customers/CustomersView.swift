@@ -64,10 +64,8 @@ struct CustomersView: View {
     }
 }
 
-#if DEBUG
-    #Preview {
-        // EmptyStateView reads the design system from the environment, so inject one.
-        CustomersView(brand: PreviewData.brand)
-            .environmentObject(ModernDesignSystem(brand: .make(name: "Order Studio")))
-    }
-#endif
+#Preview {
+    // EmptyStateView reads the design system from the environment, so inject one.
+    CustomersView(brand: PreviewData.brand)
+        .environmentObject(ModernDesignSystem(brand: .make(name: "Order Studio")))
+}

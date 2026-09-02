@@ -31,12 +31,10 @@ struct CustomerRow: View {
     }
 }
 
-#if DEBUG
-    #Preview {
-        List {
-            CustomerRow(customer: PreviewData.customer, isSelected: true, tint: PreviewData.tint)
-            CustomerRow(customer: PreviewData.customer, isSelected: false, tint: PreviewData.tint)
-        }
-        .listStyle(.plain)
+#Preview {
+    List {
+        CustomerRow(customer: PreviewData.customer, isSelected: true, tint: PreviewData.tint)
+        CustomerRow(customer: PreviewData.customer, isSelected: false, tint: PreviewData.tint)
     }
-#endif
+    .listStyle(.plain)
+}

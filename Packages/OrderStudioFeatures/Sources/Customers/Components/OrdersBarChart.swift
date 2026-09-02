@@ -41,12 +41,10 @@ struct OrdersBarChart: View {
     }
 }
 
-#if DEBUG
-    #Preview {
-        VStack(spacing: 24) {
-            OrdersBarChart(months: PreviewData.stats.monthly, tint: PreviewData.tint)
-            OrdersBarChart(months: PreviewData.stats.monthly, tint: PreviewData.tint, compactLabels: true)
-        }
-        .padding()
+#Preview {
+    VStack(spacing: 24) {
+        OrdersBarChart(months: PreviewData.stats.monthly, tint: PreviewData.tint)
+        OrdersBarChart(months: PreviewData.stats.monthly, tint: PreviewData.tint, compactLabels: true)
     }
-#endif
+    .padding()
+}

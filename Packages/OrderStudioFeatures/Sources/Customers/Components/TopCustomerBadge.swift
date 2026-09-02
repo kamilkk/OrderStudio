@@ -18,8 +18,6 @@ struct TopCustomerBadge: View {
     }
 }
 
-#if DEBUG
-    #Preview {
-        TopCustomerBadge(tint: PreviewData.tint).padding()
-    }
-#endif
+#Preview {
+    TopCustomerBadge(tint: PreviewData.tint).padding()
+}

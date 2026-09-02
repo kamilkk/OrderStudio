@@ -24,12 +24,10 @@ struct CustomerAvatar: View {
     }
 }
 
-#if DEBUG
-    #Preview {
-        HStack(spacing: 16) {
-            CustomerAvatar(customer: PreviewData.customer, tint: PreviewData.tint, diameter: 64, filled: true)
-            CustomerAvatar(customer: PreviewData.customer, tint: PreviewData.tint, diameter: 40, filled: false)
-        }
-        .padding()
+#Preview {
+    HStack(spacing: 16) {
+        CustomerAvatar(customer: PreviewData.customer, tint: PreviewData.tint, diameter: 64, filled: true)
+        CustomerAvatar(customer: PreviewData.customer, tint: PreviewData.tint, diameter: 40, filled: false)
     }
-#endif
+    .padding()
+}

@@ -28,11 +28,9 @@ struct SectionCard<Content: View>: View {
     }
 }
 
-#if DEBUG
-    #Preview {
-        SectionCard(title: "Order statistics", trailing: "Last 8 months") {
-            Text("Card content goes here")
-        }
-        .padding()
+#Preview {
+    SectionCard(title: "Order statistics", trailing: "Last 8 months") {
+        Text("Card content goes here")
     }
-#endif
+    .padding()
+}

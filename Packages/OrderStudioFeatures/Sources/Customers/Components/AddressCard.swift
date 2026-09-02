@@ -43,8 +43,6 @@ struct AddressCard: View {
     }
 }
 
-#if DEBUG
-    #Preview {
-        AddressCard(customer: PreviewData.customer, tint: PreviewData.tint).padding()
-    }
-#endif
+#Preview {
+    AddressCard(customer: PreviewData.customer, tint: PreviewData.tint).padding()
+}

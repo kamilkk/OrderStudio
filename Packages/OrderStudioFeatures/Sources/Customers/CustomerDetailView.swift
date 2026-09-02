@@ -112,21 +112,19 @@ struct CustomerDetailView: View {
     }
 }
 
-#if DEBUG
-    // `horizontalSizeClass` is overridden to preview both layouts on one device.
-    // brand.tint resolves from Bundle.main, so the accent may fall back in an isolated
-    // package preview — run in the app scheme for true brand colors.
-    #Preview("Regular") {
-        NavigationStack {
-            CustomerDetailView(customer: PreviewData.customer, brand: PreviewData.brand)
-        }
-        .environment(\.horizontalSizeClass, .regular)
+// `horizontalSizeClass` is overridden to preview both layouts on one device.
+// brand.tint resolves from Bundle.main, so the accent may fall back in an isolated
+// package preview — run in the app scheme for true brand colors.
+#Preview("Regular") {
+    NavigationStack {
+        CustomerDetailView(customer: PreviewData.customer, brand: PreviewData.brand)
     }
+    .environment(\.horizontalSizeClass, .regular)
+}
 
-    #Preview("Compact") {
-        NavigationStack {
-            CustomerDetailView(customer: PreviewData.customer, brand: PreviewData.brand)
-        }
-        .environment(\.horizontalSizeClass, .compact)
+#Preview("Compact") {
+    NavigationStack {
+        CustomerDetailView(customer: PreviewData.customer, brand: PreviewData.brand)
     }
-#endif
+    .environment(\.horizontalSizeClass, .compact)
+}
