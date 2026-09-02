@@ -9,15 +9,17 @@ import SwiftUI
 
 public struct StoreBrand: Identifiable, Hashable, Sendable {
     public let id = UUID()
-    public let name: String // display name, e.g. "Meridian & Co."
-    public let asset: String // asset-name prefix, e.g. "Meridian"
-    public let tint: Color // SwiftUI accent (brand colour is also baked into the SVGs)
+    public let name: String
+    public let asset: String
 
-    public init(name: String, asset: String, tint: Color) {
+    public init(name: String, asset: String) {
         self.name = name
         self.asset = asset
-        self.tint = tint
     }
+
+    // Brand accent, resolved from the asset catalog: "BrandVeloce", "BrandMeridian", …
+    // Single source of truth — the designer controls the value in OrderStudio.xcassets.
+    public var tint: Color { Color("Brand\(asset)") }
 
     // Vector brand art from OrderStudio.xcassets (main bundle).
     public var logoImage: Image { Image("\(asset)Logo") }
@@ -30,23 +32,11 @@ public struct StoreBrand: Identifiable, Hashable, Sendable {
 
 public extension StoreBrand {
     static let all: [StoreBrand] = [
-        .init(name: "Northpeak", asset: "Northpeak", tint: Color(hex: 0x2E7D5B)),
-        .init(name: "Auralux", asset: "Auralux", tint: Color(hex: 0x8E5CC4)),
-        .init(name: "Veloce", asset: "Veloce", tint: Color(hex: 0xE4572E)),
-        .init(name: "Meridian & Co.", asset: "Meridian", tint: Color(hex: 0x1F6FEB)),
-        .init(name: "Lumen Studio", asset: "Lumen", tint: Color(hex: 0x0E7C86)),
-        .init(name: "Bramblewood", asset: "Bramblewood", tint: Color(hex: 0x9C6B2E)),
+        .init(name: "Northpeak", asset: "Northpeak"),
+        .init(name: "Auralux", asset: "Auralux"),
+        .init(name: "Veloce", asset: "Veloce"),
+        .init(name: "Meridian & Co.", asset: "Meridian"),
+        .init(name: "Lumen Studio", asset: "Lumen"),
+        .init(name: "Bramblewood", asset: "Bramblewood"),
     ]
-}
-
-// Internal hex helper, used ONLY by Core's mock tints above.
-// ModernDesignSystem already ships a *public* `Color(hex:)` that UI/Features use;
-// keeping this one internal (no `public`) avoids a duplicate-initializer clash.
-extension Color {
-    init(hex: UInt32) {
-        self.init(.sRGB,
-                  red: Double((hex >> 16) & 0xFF) / 255,
-                  green: Double((hex >> 8) & 0xFF) / 255,
-                  blue: Double(hex & 0xFF) / 255)
-    }
 }

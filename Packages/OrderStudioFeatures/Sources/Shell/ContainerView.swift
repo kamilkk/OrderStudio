@@ -19,7 +19,7 @@ public struct ContainerView: View {
                 HomeView(brand: brand)
             }
             Tab("Customers", image: "IconCustomers", value: .customers) {
-                CustomersView()
+                CustomersView(brand: brand)
             }
             Tab("Orders", image: "IconOrders", value: .orders) {
                 OrdersView(brand: brand)
