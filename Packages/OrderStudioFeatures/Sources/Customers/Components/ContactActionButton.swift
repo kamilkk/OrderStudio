@@ -31,3 +31,14 @@ struct ContactActionButton: View {
         .accessibilityLabel(title)
     }
 }
+
+#if DEBUG
+    #Preview {
+        HStack(spacing: 12) {
+            ContactActionButton(icon: "IconPhone", title: "Call", tint: PreviewData.tint) {}
+            ContactActionButton(icon: "IconEmail", title: "Email", tint: PreviewData.tint) {}
+            ContactActionButton(icon: "IconMapPin", title: "Map", tint: PreviewData.tint) {}
+        }
+        .padding()
+    }
+#endif

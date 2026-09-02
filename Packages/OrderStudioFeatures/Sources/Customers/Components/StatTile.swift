@@ -33,5 +33,19 @@ struct StatTile: View {
             highlighted ? tint.opacity(0.10) : Color(.secondarySystemGroupedBackground),
             in: .rect(cornerRadius: 14)
         )
+        // a11y: read the tile as one element ("Lifetime spend, $48,240, ↑ 12% YoY")
+        // instead of three separate swipe stops.
+        .accessibilityElement(children: .combine)
     }
 }
+
+#if DEBUG
+    #Preview {
+        HStack {
+            StatTile(title: "Lifetime spend", value: "$48,240", caption: "↑ 12% YoY",
+                     captionTinted: true, highlighted: true, tint: PreviewData.tint)
+            StatTile(title: "Total orders", value: "64", caption: "5 open now", tint: PreviewData.tint)
+        }
+        .padding()
+    }
+#endif

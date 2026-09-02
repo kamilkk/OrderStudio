@@ -40,3 +40,13 @@ struct OrdersBarChart: View {
         .accessibilityLabel("Orders per month")
     }
 }
+
+#if DEBUG
+    #Preview {
+        VStack(spacing: 24) {
+            OrdersBarChart(months: PreviewData.stats.monthly, tint: PreviewData.tint)
+            OrdersBarChart(months: PreviewData.stats.monthly, tint: PreviewData.tint, compactLabels: true)
+        }
+        .padding()
+    }
+#endif

@@ -28,3 +28,9 @@ struct StatGrid: View {
         }
     }
 }
+
+#if DEBUG
+    #Preview {
+        StatGrid(stats: PreviewData.stats, tint: PreviewData.tint).padding()
+    }
+#endif

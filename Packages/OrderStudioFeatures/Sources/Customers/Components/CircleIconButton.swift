@@ -26,7 +26,21 @@ struct CircleIconButton: View {
                     in: .circle
                 )
                 .overlay { if !filled { Circle().stroke(.quaternary, lineWidth: 1) } }
+                // a11y: keep the visible circle at 40pt but expand the tappable area to the
+                // 44pt HIG minimum.
+                .frame(width: 44, height: 44)
+                .contentShape(.circle)
         }
         .buttonStyle(.plain)
     }
 }
+
+#if DEBUG
+    #Preview {
+        HStack(spacing: 16) {
+            CircleIconButton(icon: "IconShare", tint: PreviewData.tint) {}
+            CircleIconButton(icon: "IconAdd", filled: true, tint: PreviewData.tint) {}
+        }
+        .padding()
+    }
+#endif

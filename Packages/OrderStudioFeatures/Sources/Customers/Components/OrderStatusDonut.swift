@@ -52,3 +52,9 @@ struct OrderStatusDonut: View {
         }
     }
 }
+
+#if DEBUG
+    #Preview {
+        OrderStatusDonut(stats: PreviewData.stats, tint: PreviewData.tint).padding()
+    }
+#endif

@@ -30,3 +30,13 @@ struct CustomerRow: View {
         .accessibilityLabel("\(customer.name), \(customer.city)")
     }
 }
+
+#if DEBUG
+    #Preview {
+        List {
+            CustomerRow(customer: PreviewData.customer, isSelected: true, tint: PreviewData.tint)
+            CustomerRow(customer: PreviewData.customer, isSelected: false, tint: PreviewData.tint)
+        }
+        .listStyle(.plain)
+    }
+#endif

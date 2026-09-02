@@ -48,3 +48,9 @@ struct RecentOrdersCard: View {
                         in: .capsule)
     }
 }
+
+#if DEBUG
+    #Preview {
+        RecentOrdersCard(orders: PreviewData.orders).padding()
+    }
+#endif

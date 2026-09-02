@@ -27,3 +27,12 @@ struct SectionCard<Content: View>: View {
         .background(Color(.secondarySystemGroupedBackground), in: .rect(cornerRadius: 18))
     }
 }
+
+#if DEBUG
+    #Preview {
+        SectionCard(title: "Order statistics", trailing: "Last 8 months") {
+            Text("Card content goes here")
+        }
+        .padding()
+    }
+#endif

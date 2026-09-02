@@ -17,3 +17,9 @@ struct TopCustomerBadge: View {
             .background(tint.opacity(0.12), in: .capsule)
     }
 }
+
+#if DEBUG
+    #Preview {
+        TopCustomerBadge(tint: PreviewData.tint).padding()
+    }
+#endif
