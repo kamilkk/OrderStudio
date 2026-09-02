@@ -92,11 +92,21 @@ struct CustomerDetailView: View {
 
     @ToolbarContentBuilder private var toolbarContent: some ToolbarContent {
         if isRegular {
-            ToolbarItemGroup(placement: .topBarTrailing) {
-                CircleIconButton(icon: "IconShare", tint: brand.tint) { /* share sheet */ }
-                    .accessibilityLabel("Share")
-                CircleIconButton(icon: "IconAdd", filled: true, tint: brand.tint) { /* new order */ }
-                    .accessibilityLabel("New order")
+            ToolbarItem(placement: .topBarTrailing) {
+                // iOS 26 styles toolbar buttons itself, so let the system draw the prominent
+                // circle (buttonBorderShape) rather than a custom background that it stretches.
+                // Glyph size is controlled by the image frame.
+                Button { /* new order */ } label: {
+                    Image("IconAdd")
+                        .renderingMode(.template)
+                        .resizable().scaledToFit()
+                        .frame(width: 16, height: 16)
+                        .foregroundStyle(.white)
+                }
+                .buttonStyle(.borderedProminent)
+                .buttonBorderShape(.circle)
+                .tint(brand.tint)
+                .accessibilityLabel("New order")
             }
         } else {
             ToolbarItem(placement: .topBarTrailing) {

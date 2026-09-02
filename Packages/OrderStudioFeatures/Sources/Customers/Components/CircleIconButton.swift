@@ -10,6 +10,7 @@ import SwiftUI
 struct CircleIconButton: View {
     let icon: String // asset name, e.g. "IconShare" / "IconAdd"
     var filled = false // filled = brand tint bg + white glyph
+    var glyphSize: CGFloat = 18 // optical size of the glyph inside the 40pt circle
     let tint: Color
     let action: () -> Void
 
@@ -18,7 +19,7 @@ struct CircleIconButton: View {
             Image(icon)
                 .renderingMode(.template)
                 .resizable().scaledToFit()
-                .frame(width: 18, height: 18)
+                .frame(width: glyphSize, height: glyphSize)
                 .foregroundStyle(filled ? Color.white : tint)
                 .frame(width: 40, height: 40)
                 .background(
